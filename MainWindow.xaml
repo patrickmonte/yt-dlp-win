@@ -44,19 +44,19 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="URL(s) do vídeo" VerticalAlignment="Top" Margin="0,5,12,0"/>
+                    <Label Content="_URL(s) do vídeo" Target="{Binding ElementName=UrlsTextBox}" VerticalAlignment="Top" Margin="0,5,12,0" Padding="0"/>
                     <TextBox x:Name="UrlsTextBox" Grid.Column="1" Grid.ColumnSpan="3" Height="72"
                              AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
                              ToolTip="Cole uma URL por linha. Apenas endereços http:// e https:// são aceitos."/>
-                    <TextBlock Grid.Row="1" Text="Salvar em" VerticalAlignment="Center" Margin="0,12,12,0"/>
+                    <Label Grid.Row="1" Content="_Salvar em" Target="{Binding ElementName=PathTextBox}" VerticalAlignment="Center" Margin="0,12,12,0" Padding="0"/>
                     <TextBox x:Name="PathTextBox" Grid.Row="1" Grid.Column="1" Margin="0,10,4,0"
                              IsReadOnly="True" VerticalContentAlignment="Center"/>
                     <Button Grid.Row="1" Grid.Column="2" Click="BrowsePath_Click" Margin="4,10,4,0">
                         <StackPanel Orientation="Horizontal"><TextBlock Text="&#xE8B7;" FontFamily="Segoe MDL2 Assets" Margin="0,0,6,0"/><TextBlock Text="Procurar"/></StackPanel>
                     </Button>
-                    <ComboBox x:Name="PresetComboBox" Grid.Row="1" Grid.Column="3" Width="145"
+                    <ComboBox x:Name="PresetComboBox" AutomationProperties.Name="Preset" Grid.Row="1" Grid.Column="3" Width="145"
                               Margin="4,10,0,0" VerticalContentAlignment="Center"/>
-                    <TextBlock Grid.Row="2" Text="Modelo" VerticalAlignment="Center" Margin="0,12,12,0"
+                    <Label Grid.Row="2" Content="_Modelo" Target="{Binding ElementName=ModelComboBox}" VerticalAlignment="Center" Margin="0,12,12,0" Padding="0"
                                ToolTip="Modelos baseados nos exemplos do yt-dlp."/>
                     <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,10,0,0">
                         <Grid.ColumnDefinitions>
@@ -94,23 +94,23 @@
                         <CheckBox x:Name="LiveFromStartCheckBox" Grid.Row="1" Grid.Column="1" Content="Live desde o início"/>
                         <CheckBox x:Name="MarkWatchedCheckBox" Grid.Row="2" Content="Marcar como assistido"/>
                         <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
-                            <TextBlock Text="Aguardar vídeo:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                            <Label Content="_Aguardar vídeo:" Target="{Binding ElementName=WaitForVideoTextBox}" VerticalAlignment="Center" Margin="0,0,6,0" Padding="0"/>
                             <TextBox x:Name="WaitForVideoTextBox" Width="90" ToolTip="Segundos ou intervalo, por exemplo 30-60."/>
                         </StackPanel>
                         <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,6,6,0">
-                            <TextBlock Text="Runtime JS:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                            <Label Content="_Runtime JS:" Target="{Binding ElementName=JsRuntimeTextBox}" VerticalAlignment="Center" Margin="0,0,6,0" Padding="0"/>
                             <TextBox x:Name="JsRuntimeTextBox" Width="150" ToolTip="deno, node, quickjs ou bun."/>
                         </StackPanel>
                         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Margin="0,6,0,0">
-                            <TextBlock Text="Componentes remotos:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                            <Label Content="_Componentes remotos:" Target="{Binding ElementName=RemoteComponentsTextBox}" VerticalAlignment="Center" Margin="0,0,6,0" Padding="0"/>
                             <TextBox x:Name="RemoteComponentsTextBox" Width="150" ToolTip="Separe por vírgulas: ejs:npm, ejs:github."/>
                         </StackPanel>
                         <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,6,6,0">
-                            <TextBlock Text="Arquivo de configuração:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                            <Label Content="Arquivo de c_onfiguração:" Target="{Binding ElementName=ConfigLocationTextBox}" VerticalAlignment="Center" Margin="0,0,6,0" Padding="0"/>
                             <TextBox x:Name="ConfigLocationTextBox" Width="150"/>
                         </StackPanel>
                         <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="0,6,0,0">
-                            <TextBlock Text="Pasta de plugins:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                            <Label Content="_Pasta de plugins:" Target="{Binding ElementName=PluginDirectoryTextBox}" VerticalAlignment="Center" Margin="0,0,6,0" Padding="0"/>
                             <TextBox x:Name="PluginDirectoryTextBox" Width="150"/>
                         </StackPanel>
                         <TextBlock Grid.Row="5" Grid.ColumnSpan="2" Text="As opções são aplicadas a todos os itens adicionados ao iniciar o download."
